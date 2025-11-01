@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import * as Previews from "./experiments/previews";
 
 export default function HomePage() {
   return (
@@ -49,9 +50,28 @@ export default function HomePage() {
         <div className="mt-12">
           <h2 className="font-display text-2xl text-bronze-900">Featured</h2>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((n) => (
+            {[
+              {
+                title: "Brass Noise",
+                slug: "brass-noise",
+                description: "Audio synthesis with resonator banks and harmonic exploration.",
+                Preview: Previews.BrassNoisePreview
+              },
+              {
+                title: "Chrono Plot",
+                slug: "chrono-plot",
+                description: "Real-time data visualization with pan, zoom, and temporal analysis.",
+                Preview: Previews.ChronoPlotPreview
+              },
+              {
+                title: "Orrery Constructor",
+                slug: "orrery-constructor",
+                description: "Build mechanical solar system models with precise orbital mechanics.",
+                Preview: Previews.OrreryConstructorPreview
+              }
+            ].map((experiment) => (
               <Card
-                key={n}
+                key={experiment.slug}
                 className="relative overflow-hidden bg-bronze-50/60 ring-1 ring-inset ring-bronze-700/20"
               >
                 {/* Brass frame with rivets */}
@@ -71,17 +91,19 @@ export default function HomePage() {
                 </div>
 
                 <CardHeader>
-                  <CardTitle>Gadget #{n}</CardTitle>
+                  <CardTitle>{experiment.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="h-28 rounded bg-gradient-to-br from-amber-200/50 to-amber-300/30 ring-1 ring-inset ring-bronze-700/30" />
+                  <div className="h-32 rounded bg-gradient-to-br from-amber-200/50 to-amber-300/30 ring-1 ring-inset ring-bronze-700/30 overflow-hidden">
+                    <experiment.Preview />
+                  </div>
                   <div className="mt-3 text-sm text-bronze-800/90">
-                    A whimsical gizmo awaiting tuning.
+                    {experiment.description}
                   </div>
                 </CardContent>
                 <CardFooter>
                   <Button asChild size="sm">
-                    <Link href={`/experiments/gadget-${n}`}>Open</Link>
+                    <Link href={`/experiments/${experiment.slug}`}>Open</Link>
                   </Button>
                 </CardFooter>
               </Card>
