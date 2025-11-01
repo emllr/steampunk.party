@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from 'next/image'
 import { Button } from "@/components/ui/button";
 import { Compass, FlaskConical, Github } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -20,8 +21,7 @@ export function Navbar() {
     <header className="border-b border-bronze-600/40 bg-bronze-50/50 backdrop-blur supports-[backdrop-filter]:bg-bronze-50/30">
       <div className="container mx-auto flex items-center justify-between gap-6 px-6 py-4">
         <Link href="/" className="flex items-center gap-3 font-display text-xl tracking-wide text-bronze-900">
-          <span className="inline-block size-6 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 ring-2 ring-bronze-700/50 shadow-[inset_0_0_6px_rgba(0,0,0,0.35)]" />
-          steampunk.party
+          <Image src={`/images/logo/text.png`} alt="Steam Punk Party" width="300" height="64" />
         </Link>
 
         <nav className="flex items-center gap-1 text-bronze-800">
