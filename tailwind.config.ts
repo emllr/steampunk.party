@@ -26,6 +26,10 @@ export default {
       borderRadius: {
         lg: "var(--radius-lg)",
         xl: "var(--radius-xl)"
+      },
+      animation: {
+        "spin-slow": "spin 20s linear infinite",
+        "spin-slow-reverse": "spin 15s linear infinite reverse",
       }
     }
   },

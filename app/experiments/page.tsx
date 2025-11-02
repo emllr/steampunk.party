@@ -9,51 +9,51 @@ export const metadata = {
 };
 
 const experiments = [
-  { 
-    slug: "brass-noise", 
-    name: "Brass Noise", 
+  {
+    slug: "brass-noise",
+    name: "Brass Noise",
     blurb: "Procedural sound tinkering in a copper tube.",
     Preview: Previews.BrassNoisePreview
   },
-  { 
-    slug: "smoke-sim", 
-    name: "Smoke Sim", 
+  {
+    slug: "smoke-sim",
+    name: "Smoke Sim",
     blurb: "GPU particles and volumetric fog for dramatic reveals.",
     Preview: Previews.SmokeSimPreview
   },
-  { 
-    slug: "chrono-plot", 
-    name: "Chrono Plot", 
+  {
+    slug: "chrono-plot",
+    name: "Chrono Plot",
     blurb: "Time-series plotter with ornamental axes.",
     Preview: Previews.ChronoPlotPreview
   },
-  { 
-    slug: "gear-lattice", 
-    name: "Gear Lattice", 
+  {
+    slug: "gear-lattice",
+    name: "Gear Lattice",
     blurb: "Parametric gears and lattices with SVG.",
     Preview: Previews.GearLatticePreview
   },
-  { 
-    slug: "vacuum-tubes", 
-    name: "Vacuum Tubes", 
+  {
+    slug: "vacuum-tubes",
+    name: "Vacuum Tubes",
     blurb: "Glowing tubes and oscilloscopes.",
     Preview: Previews.VacuumTubesPreview
   },
-  { 
-    slug: "clockwork-automata", 
-    name: "Clockwork Automata", 
+  {
+    slug: "clockwork-automata",
+    name: "Clockwork Automata",
     blurb: "L-systems drive mechanical diagrams; export SVG or an animated frame strip.",
     Preview: Previews.ClockworkAutomataPreview
   },
-  { 
-    slug: "aether-synth", 
-    name: "Aether Synth", 
+  {
+    slug: "aether-synth",
+    name: "Aether Synth",
     blurb: "Granular texture generator with bronze-themed mixer and pads.",
     Preview: Previews.AetherSynthPreview
   },
-  { 
-    slug: "orrery-constructor", 
-    name: "Orrery Constructor", 
+  {
+    slug: "orrery-constructor",
+    name: "Orrery Constructor",
     blurb: "Build planetary gear systems with accurate astronomical ratios.",
     Preview: Previews.OrreryConstructorPreview
   },
@@ -62,14 +62,14 @@ const experiments = [
 export default function ExperimentsPage() {
   return (
     <section>
-      <h1 className="font-display text-4xl text-bronze-900">Experiments</h1>
-      <p className="mt-2 text-bronze-800/90">
+      <h1 className="font-display text-3xl sm:text-4xl text-bronze-800 dark:text-bronze-500">Experiments</h1>
+      <p className="mt-2 text-bronze-700 dark:text-bronze-300">
         Works in progress. Expect leaks, clanks, and the occasional puff of steam.
       </p>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {experiments.map((exp) => (
-          <Card key={exp.slug} className="relative overflow-hidden bg-bronze-50/60 ring-1 ring-inset ring-bronze-700/20">
+          <Card key={exp.slug} className="relative overflow-hidden bg-bronze-50/60 ring-1 ring-inset ring-bronze-700/20 dark:bg-bronze-900/40 dark:ring-bronze-700/30">
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute inset-0 rounded-xl ring-1 ring-bronze-700/30" />
               {["left-2 top-2","right-2 top-2","left-2 bottom-2","right-2 bottom-2"].map((pos, i) => (
@@ -83,7 +83,7 @@ export default function ExperimentsPage() {
               <div className="h-32 rounded bg-gradient-to-br from-amber-200/50 to-amber-300/30 ring-1 ring-inset ring-bronze-700/30 overflow-hidden">
                 <exp.Preview />
               </div>
-              <div className="mt-3 text-sm text-bronze-800/90">{exp.blurb}</div>
+              <div className="mt-3 text-sm text-bronze-800/90 dark:text-bronze-200">{exp.blurb}</div>
             </CardContent>
             <CardFooter>
               <Button asChild size="sm">

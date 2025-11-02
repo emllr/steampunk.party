@@ -127,9 +127,9 @@ export default function ExperimentPage({ params }: { params: { slug: string } })
   return (
     <section className="relative">
       <div className="mx-auto max-w-6xl">
-        <div className="relative overflow-hidden rounded-2xl border border-bronze-700/40 bg-gradient-to-br from-amber-50/70 via-amber-100/40 to-amber-200/30 p-6 shadow-[inset_0_0_14px_rgba(0,0,0,0.12),0_16px_28px_-16px_rgba(0,0,0,0.45)]">
+        <div className="relative overflow-hidden rounded-xl border border-bronze-700/40 bg-gradient-to-br from-amber-50/70 via-amber-100/40 to-amber-200/30 p-4 sm:rounded-2xl sm:p-6 shadow-[inset_0_0_14px_rgba(0,0,0,0.12),0_16px_28px_-16px_rgba(0,0,0,0.45)] dark:border-bronze-700/20 dark:from-bronze-900/30 dark:via-bronze-800/20 dark:to-bronze-900/10">
           <div className="flex items-center justify-between">
-            <h1 className="font-display text-3xl sm:text-4xl text-bronze-900">{exp.name}</h1>
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl text-bronze-900 dark:text-bronze-100">{exp.name}</h1>
             <Badge variant="brass">Experimental</Badge>
           </div>
           <p className="mt-2 text-[var(--muted-foreground)]">{exp.blurb}</p>
