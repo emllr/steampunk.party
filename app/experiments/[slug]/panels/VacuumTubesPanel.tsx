@@ -74,12 +74,12 @@ export function VacuumTubesPanel() {
   // Simulation loop (two-stage)
   useEffect(() => {
     let raf = 0;
-    let t0 = performance.now() / 1000;
+    // let t0 = performance.now() / 1000;
 
     const tick = () => {
       const now = performance.now() / 1000;
-      const dt = now - t0;
-      t0 = now;
+      // const dt = now - t0;
+      // t0 = now;
 
       if (running) {
         // Drive

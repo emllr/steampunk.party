@@ -40,7 +40,7 @@ export function OrreryConstructorPanel() {
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
   const controlsRef = useRef<OrbitControls | null>(null);
   const gearsRef = useRef<Map<PlanetKey, THREE.Group>>(new Map());
-  const frameRef = useRef<number>(0);
+  // const frameRef = useRef<number>(0);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
@@ -97,18 +97,18 @@ export function OrreryConstructorPanel() {
     const starCount = 5000;
     const positions = new Float32Array(starCount * 3);
     const colors = new Float32Array(starCount * 3);
-    
+
     for (let i = 0; i < starCount; i++) {
       const i3 = i * 3;
       // Random position in sphere
       const radius = 50 + Math.random() * 100;
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos((Math.random() - 0.5) * 2);
-      
+
       positions[i3] = radius * Math.sin(phi) * Math.cos(theta);
       positions[i3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
       positions[i3 + 2] = radius * Math.cos(phi);
-      
+
       // Star colors - mostly white with some blue/yellow tints
       const colorType = Math.random();
       if (colorType < 0.7) {
@@ -126,10 +126,10 @@ export function OrreryConstructorPanel() {
         colors[i3 + 2] = 0.7;
       }
     }
-    
+
     starsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     starsGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-    
+
     const starsMaterial = new THREE.PointsMaterial({
       size: 0.5,
       vertexColors: true,
@@ -137,7 +137,7 @@ export function OrreryConstructorPanel() {
       opacity: 0.8,
       sizeAttenuation: true,
     });
-    
+
     const stars = new THREE.Points(starsGeometry, starsMaterial);
     scene.add(stars);
 
@@ -155,7 +155,7 @@ export function OrreryConstructorPanel() {
     directionalLight.shadow.camera.top = 10;
     directionalLight.shadow.camera.bottom = -10;
     scene.add(directionalLight);
-    
+
     // Add a subtle rim light
     const rimLight = new THREE.DirectionalLight(0x4444ff, 0.3);
     rimLight.position.set(-5, 5, -5);
@@ -187,7 +187,7 @@ export function OrreryConstructorPanel() {
     rim.rotation.x = Math.PI / 2;
     rim.position.y = 0;
     scene.add(rim);
-    
+
     // Add some decorative details to the platform
     const detailCount = 12;
     for (let i = 0; i < detailCount; i++) {
@@ -235,10 +235,10 @@ export function OrreryConstructorPanel() {
 
     // Gear geometry
     const teeth = data.teeth;
-    const module = 0.02;
-    const pitchRadius = (teeth * module) / 2;
-    const outerRadius = pitchRadius + module;
-    const innerRadius = pitchRadius - module;
+    const toothModule = 0.02;
+    const pitchRadius = (teeth * toothModule) / 2;
+    const outerRadius = pitchRadius + toothModule;
+    const innerRadius = pitchRadius - toothModule;
 
     const shape = new THREE.Shape();
     const toothAngle = (Math.PI * 2) / teeth;
@@ -370,11 +370,11 @@ export function OrreryConstructorPanel() {
     const planetMesh = new THREE.Mesh(planetGeometry, planetMaterial);
     planetMesh.position.set(armLength, data.radius * 2, 0);
     planetMesh.castShadow = true;
-    
+
     // Store reference for orbit updates
     planetMesh.userData = { armLength, planetData: data };
     armContainer.add(planetMesh);
-    
+
     // Name the arm container for easy access
     armContainer.name = 'armContainer';
     group.add(armContainer);
@@ -394,29 +394,29 @@ export function OrreryConstructorPanel() {
       orbitRing.name = 'orbitRing';
       group.add(orbitRing);
     }
-    
+
     // Label (optional)
     if (showLabels) {
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d')!;
       canvas.width = 256;
       canvas.height = 64;
-      
+
       context.fillStyle = 'rgba(20, 20, 30, 0.8)';
       context.fillRect(0, 0, canvas.width, canvas.height);
-      
+
       context.strokeStyle = '#b8860b';
       context.lineWidth = 2;
       context.strokeRect(2, 2, canvas.width - 4, canvas.height - 4);
-      
+
       context.font = 'bold 32px serif';
       context.fillStyle = '#f0d090';
       context.textAlign = 'center';
       context.textBaseline = 'middle';
       context.fillText(data.name, canvas.width / 2, canvas.height / 2);
-      
+
       const texture = new THREE.CanvasTexture(canvas);
-      const labelMaterial = new THREE.SpriteMaterial({ 
+      const labelMaterial = new THREE.SpriteMaterial({
         map: texture,
         transparent: true,
       });
@@ -439,7 +439,7 @@ export function OrreryConstructorPanel() {
       sceneRef.current!.remove(gear);
     });
     gearsRef.current.clear();
-    
+
     // Remove old connection lines
     const oldConnections = sceneRef.current.children.filter(child => child.name === 'connection');
     oldConnections.forEach(conn => sceneRef.current!.remove(conn));
@@ -449,12 +449,12 @@ export function OrreryConstructorPanel() {
       const gear = createGear(system.planet);
       gear.position.set(system.x, 0, system.y);
       gear.rotation.y = system.rotation;
-      
+
       // Add selection highlight if selected
       if (selectedPlanet === system.planet) {
         const highlightGeometry = new THREE.RingGeometry(
-          PLANETS[system.planet].teeth * 0.02, 
-          PLANETS[system.planet].teeth * 0.022, 
+          PLANETS[system.planet].teeth * 0.02,
+          PLANETS[system.planet].teeth * 0.022,
           64
         );
         const highlightMaterial = new THREE.MeshBasicMaterial({
@@ -468,7 +468,7 @@ export function OrreryConstructorPanel() {
         highlight.position.y = 0.51;
         gear.add(highlight);
       }
-      
+
       sceneRef.current!.add(gear);
       gearsRef.current.set(system.planet, gear);
     });
@@ -478,7 +478,7 @@ export function OrreryConstructorPanel() {
       system.connected.forEach(connectedPlanet => {
         const connectedSystem = systems.find(s => s.planet === connectedPlanet);
         if (!connectedSystem) return;
-        
+
         // Only draw once (from alphabetically first planet)
         if (system.planet < connectedPlanet) {
           // Connection line
@@ -486,8 +486,8 @@ export function OrreryConstructorPanel() {
             new THREE.Vector3(system.x, 0.55, system.y),
             new THREE.Vector3(connectedSystem.x, 0.55, connectedSystem.y),
           ]);
-          const material = new THREE.LineBasicMaterial({ 
-            color: 0xb8860b, 
+          const material = new THREE.LineBasicMaterial({
+            color: 0xb8860b,
             linewidth: 1,
             opacity: 0.4,
             transparent: true
@@ -545,7 +545,7 @@ export function OrreryConstructorPanel() {
           if (orbitRing) {
             orbitRing.visible = showOrbits;
           }
-          
+
           // Update label visibility
           const label = gear.getObjectByName('label');
           if (label) {
@@ -556,7 +556,7 @@ export function OrreryConstructorPanel() {
         // Propagate rotation through connected gears
         const rotated = new Set<PlanetKey>();
         const toProcess: PlanetKey[] = [];
-        
+
         // Start with driver gears
         systems.forEach(s => {
           if (s.isDriver) {
@@ -564,33 +564,33 @@ export function OrreryConstructorPanel() {
             toProcess.push(s.planet);
           }
         });
-        
+
         // Process connected gears
         while (toProcess.length > 0) {
           const current = toProcess.shift()!;
           const currentSystem = systems.find(s => s.planet === current)!;
           const currentGear = gearsRef.current.get(current)!;
           const currentData = PLANETS[current];
-          
+
           currentSystem.connected.forEach(connectedPlanet => {
             if (!rotated.has(connectedPlanet)) {
               const connectedSystem = systems.find(s => s.planet === connectedPlanet);
               const connectedGear = gearsRef.current.get(connectedPlanet);
-              
+
               if (connectedSystem && connectedGear) {
                 const connectedData = PLANETS[connectedPlanet];
                 const ratio = currentData.teeth / connectedData.teeth;
-                
+
                 // Connected gears rotate in opposite direction
                 connectedGear.rotation.y = -currentGear.rotation.y * ratio;
                 connectedSystem.rotation = connectedGear.rotation.y;
-                
+
                 // Update arm rotation
                 const armContainer = connectedGear.getObjectByName('armContainer');
                 if (armContainer) {
                   armContainer.rotation.y = connectedGear.rotation.y;
                 }
-                
+
                 rotated.add(connectedPlanet);
                 toProcess.push(connectedPlanet);
               }
@@ -624,19 +624,19 @@ export function OrreryConstructorPanel() {
     let x = 0;
     let y = 0;
     let found = false;
-    
+
     // Try to position next to an existing gear if possible
     if (systems.length > 0) {
       const lastSystem = systems[systems.length - 1];
       const lastRadius = (PLANETS[lastSystem.planet].teeth * 0.02) / 2;
       const newRadius = (PLANETS[planet].teeth * 0.02) / 2;
       const distance = lastRadius + newRadius + 0.1; // Small gap between gears
-      
+
       // Try different angles to find an empty spot
       for (let angle = 0; angle < Math.PI * 2; angle += Math.PI / 4) {
         x = lastSystem.x + Math.cos(angle) * distance;
         y = lastSystem.y + Math.sin(angle) * distance;
-        
+
         // Check if this position overlaps with any existing gear
         const overlaps = systems.some(s => {
           const dx = s.x - x;
@@ -646,20 +646,20 @@ export function OrreryConstructorPanel() {
           const r2 = newRadius;
           return d < (r1 + r2 + 0.05);
         });
-        
+
         if (!overlaps) {
           found = true;
           break;
         }
       }
     }
-    
+
     if (!found) {
       // Fallback to random position
       x = Math.random() * 6 - 3;
       y = Math.random() * 6 - 3;
     }
-    
+
     const newSystem: GearSystem = {
       planet,
       x,
@@ -690,25 +690,25 @@ export function OrreryConstructorPanel() {
       const system1 = prev.find(s => s.planet === planet1);
       const system2 = prev.find(s => s.planet === planet2);
       if (!system1 || !system2) return prev;
-      
+
       const isConnected = system1.connected.includes(planet2);
-      
+
       if (!isConnected) {
         // When connecting, check if we need to reposition for proper meshing
         const r1 = (PLANETS[planet1].teeth * 0.02) / 2;
         const r2 = (PLANETS[planet2].teeth * 0.02) / 2;
         const requiredDistance = r1 + r2;
-        
+
         const dx = system2.x - system1.x;
         const dy = system2.y - system1.y;
         const currentDistance = Math.sqrt(dx * dx + dy * dy);
-        
+
         // If gears are too far apart or too close, offer to reposition
         if (Math.abs(currentDistance - requiredDistance) > 0.1) {
           const angle = Math.atan2(dy, dx);
           const newX = system1.x + Math.cos(angle) * requiredDistance;
           const newY = system1.y + Math.sin(angle) * requiredDistance;
-          
+
           // Check if new position would overlap with other gears
           const wouldOverlap = prev.some(s => {
             if (s.planet === planet1 || s.planet === planet2) return false;
@@ -716,7 +716,7 @@ export function OrreryConstructorPanel() {
             const radius = (PLANETS[s.planet].teeth * 0.02) / 2;
             return dist < (radius + r2 + 0.1);
           });
-          
+
           if (!wouldOverlap) {
             // Auto-reposition the second gear for proper meshing
             return prev.map(s => {
@@ -731,7 +731,7 @@ export function OrreryConstructorPanel() {
           }
         }
       }
-      
+
       // Default connection toggle
       return prev.map(s => {
         if (s.planet === planet1) {

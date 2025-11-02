@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 // Gear Lattice MVP
 // - Involute gear path generator (SVG)
@@ -120,14 +120,14 @@ M ${rOuter} 0 A ${rOuter} ${rOuter} 0 1 1 ${-rOuter} 0 A ${rOuter} ${rOuter} 0 1
 
     // Root points on root circle at boundaries
     const rootR = { x: rRoot * Math.cos(thetaRight), y: rRoot * Math.sin(thetaRight) };
-    const rootL = { x: rRoot * Math.cos(thetaLeft), y: rRoot * Math.sin(thetaLeft) };
+    // const rootL = { x: rRoot * Math.cos(thetaLeft), y: rRoot * Math.sin(thetaLeft) };
 
     // Build tooth polygon path: rootR -> flankR (outer) -> tip arc -> flankL -> rootL -> root arc back
     let tooth = `M ${rootR.x} ${rootR.y}`;
     flankR.forEach((pt) => { tooth += ` L ${pt.x} ${pt.y}`; });
     // Tip arc between last points of flanks projected to outer circle
-    const tipA = Math.atan2(flankR[flankR.length - 1].y, flankR[flankR.length - 1].x);
-    const tipB = Math.atan2(flankL[flankL.length - 1].y, flankL[flankL.length - 1].x);
+    // const tipA = Math.atan2(flankR[flankR.length - 1].y, flankR[flankR.length - 1].x);
+    // const tipB = Math.atan2(flankL[flankL.length - 1].y, flankL[flankL.length - 1].x);
     tooth += ` A ${rOuter} ${rOuter} 0 0 0 ${flankL[flankL.length - 1].x} ${flankL[flankL.length - 1].y}`;
     // Back down left flank
     for (let i = flankL.length - 2; i >= 0; i--) {

@@ -252,7 +252,7 @@ void main(){
   o_col = vec4(color, alpha);
 }`, []);
 
-  const drawFragSrc = useMemo(() => `#version 300 es
+  /*const drawFragSrc = useMemo(() => `#version 300 es
 precision highp float;
 in vec2 v_uv;
 out vec4 o_col;
@@ -276,7 +276,7 @@ void main(){
   }
   smoke += (u_density - 1.0) * 0.08;
   o_col = vec4(smoke, alpha);
-}`, []);
+}`, []);*/
 
   useEffect(() => {
     const canvas = canvasRef.current!;

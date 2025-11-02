@@ -37,6 +37,7 @@ export function BrassNoisePanel() {
 
   const start = async () => {
     if (running) return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const AudioCtx = (window.AudioContext || (window as any).webkitAudioContext) as typeof AudioContext;
     const ctx = new AudioCtx();
     ctxRef.current = ctx;
