@@ -13,12 +13,12 @@ export function Footer({ className }: { className?: string }) {
           {/* Left gauge */}
           <Gauge label="Pressure" value={72} />
           {/* Ornamental bar */}
-          <div className="h-1 flex-1 rounded-full bg-gradient-to-r from-amber-300/60 via-amber-500/40 to-amber-300/60 ring-1 ring-inset ring-bronze-700/30 shadow-[inset_0_1px_2px_rgba(0,0,0,0.15)]" />
+          <div className="h-1 flex-1 rounded-full bg-gradient-to-r from-amber-300/30 via-amber-500/60 to-amber-300/30 ring-1 ring-inset ring-bronze-700/30 shadow-[inset_0_1px_2px_rgba(0,0,0,0.15)]" />
           {/* Right gauge */}
           <Gauge label="Heat" value={58} />
         </div>
       </div>
-      <div className="container mx-auto px-6 pb-8 text-sm text-bronze-800">
+      <div className="container mx-auto px-6 pb-8 text-sm text-bronze-800/80">
         <p>© {new Date().getFullYear()} steampunk.party — Built with Next.js, Tailwind, and shadcn-style UI</p>
       </div>
     </footer>
@@ -31,7 +31,7 @@ function Gauge({ label, value }: { label: string; value: number }) {
 
   return (
     <div className="relative flex items-center gap-3">
-      <div className="relative size-16 rounded-full bg-gradient-to-b from-amber-200/70 to-amber-400/30 ring-1 ring-inset ring-bronze-800/50 shadow-[inset_0_0_10px_rgba(0,0,0,0.15)]">
+      <div className="relative size-16 rounded-full bg-gradient-to-b from-bronze-800/70 to-amber-400/30 ring-1 ring-inset ring-bronze-800/50 shadow-[inset_0_0_10px_rgba(0,0,0,0.15)]">
         <svg viewBox="0 0 100 60" className="absolute inset-0 m-auto h-[70%] w-[70%] translate-y-[18%] text-bronze-800">
           <path d="M10,60 A40,40 0 0,1 90,60" fill="none" stroke="currentColor" strokeWidth="4" />
           <line
@@ -45,7 +45,7 @@ function Gauge({ label, value }: { label: string; value: number }) {
           />
         </svg>
         <div className="absolute inset-0 grid place-items-center">
-          <span className="rounded bg-bronze-900/80 px-1.5 py-0.5 text-[10px] font-semibold text-amber-200 ring-1 ring-inset ring-bronze-700/50">
+          <span className="rounded bg-bronze-900/80 px-1.5 py-0.5 text-[10px] font-semibold text-amber-600/90 ring-1 ring-inset ring-bronze-700/50">
             {clamped}%
           </span>
         </div>
