@@ -52,10 +52,10 @@ export default function HomePage() {
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Brass Noise",
-                slug: "brass-noise",
-                description: "Audio synthesis with resonator banks and harmonic exploration.",
-                Preview: Previews.BrassNoisePreview
+                title: "Aether Synth",
+                slug: "aether-synth",
+                description: "Granular texture generator with bronze-themed mixer and pads.",
+                Preview: Previews.AetherSynthPreview
               },
               {
                 title: "Chrono Plot",
