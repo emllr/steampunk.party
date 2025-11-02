@@ -17,14 +17,14 @@ export function OrreryConstructorPreview() {
       ))}
 
       {/* Base platform */}
-      <ellipse cx="100" cy="120" rx="60" ry="15" fill="#1a1a1a" stroke="#b8860b" strokeWidth="1" />
+      <ellipse cx="100" cy="120" rx="60" ry="15" fill="#1a1a1a" stroke="#8c7d58ff" strokeWidth="1" />
 
       {/* Central sun gear */}
       <g transform="translate(100, 75)">
-        <circle cx="0" cy="0" r="20" fill="#b8860b" stroke="#8b6914" strokeWidth="1" />
+        <circle cx="0" cy="0" r="20" fill="#c2a661ff" stroke="#8b6914" strokeWidth="1" />
         <circle cx="0" cy="0" r="8" fill="#4a4a4a" />
         {/* Sun */}
-        <circle cx="0" cy="0" r="6" fill="#ffd700" filter="url(#sunGlow)" />
+        <circle cx="0" cy="0" r="6" fill="#fddf35ff" filter="url(#sunGlow)" />
         <animateTransform
           attributeName="transform"
           type="rotate"
@@ -49,7 +49,7 @@ export function OrreryConstructorPreview() {
           {/* Arm */}
           <line x1="0" y1="0" x2="35" y2="0" stroke="#8b6914" strokeWidth="1" opacity="0.5" />
           {/* Earth */}
-          <circle cx="35" cy="0" r="4" fill="#4169E1" />
+          <circle cx="35" cy="0" r="4" fill="#6a89e5ff" />
         </g>
       </g>
 
@@ -64,11 +64,11 @@ export function OrreryConstructorPreview() {
             repeatCount="indefinite"
           />
           {/* Gear */}
-          <circle cx="50" cy="0" r="15" fill="none" stroke="#8b6914" strokeWidth="1" opacity="0.5" />
+          <circle cx="50" cy="0" r="15" fill="none" stroke="#997e39ff" strokeWidth="1" opacity="0.5" />
           {/* Arm */}
-          <line x1="0" y1="0" x2="50" y2="0" stroke="#8b6914" strokeWidth="1" opacity="0.5" />
+          <line x1="0" y1="0" x2="50" y2="0" stroke="#947e45ff" strokeWidth="1" opacity="0.5" />
           {/* Mars */}
-          <circle cx="50" cy="0" r="3" fill="#CD5C5C" />
+          <circle cx="50" cy="0" r="3" fill="#914e4eff" />
         </g>
       </g>
 
@@ -87,7 +87,7 @@ export function OrreryConstructorPreview() {
           {/* Arm */}
           <line x1="0" y1="0" x2="-25" y2="0" stroke="#8b6914" strokeWidth="1" opacity="0.5" />
           {/* Venus */}
-          <circle cx="-25" cy="0" r="3.5" fill="#FFA500" />
+          <circle cx="-25" cy="0" r="3.5" fill="#ffa600ff" />
         </g>
       </g>
 
@@ -98,7 +98,7 @@ export function OrreryConstructorPreview() {
           const x = Math.cos(angle) * 55;
           const y = Math.sin(angle) * 13;
           return (
-            <ellipse key={i} cx={x} cy={y} rx="2" ry="1" fill="#b8860b" />
+            <ellipse key={i} cx={x} cy={y} rx="2" ry="1" fill="#daba6aff" />
           );
         })}
       </g>

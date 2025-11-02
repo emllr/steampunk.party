@@ -14,7 +14,7 @@ const badgeVariants = cva(
         outline:
           "border-[var(--border)] text-[var(--foreground)]",
         brass:
-          "border-bronze-800/50 bg-gradient-to-b from-amber-200/50 to-amber-400/30 text-bronze-900 shadow-[inset_0_0_6px_rgba(0,0,0,0.12)]",
+          "border-bronze-700/50 bg-gradient-to-b from-amber-400/50 to-amber-600/30 text-bronze-900/90 shadow-[inset_0_0_6px_rgba(0,0,0,0.12)]",
       },
     },
     defaultVariants: {

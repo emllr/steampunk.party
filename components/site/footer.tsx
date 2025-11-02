@@ -414,21 +414,21 @@ export function Footer({ className }: { className?: string }) {
 
             {/* Connecting Pipe */}
             <div className="relative flex-1">
-              <svg className="w-full h-20" viewBox="0 0 200 80" preserveAspectRatio="none">
+              <svg className="w-full h-20" viewBox="0 25 200 80" preserveAspectRatio="none">
                 {/* Main pipe */}
                 <path
                   d="M 10 40 L 190 40"
                   stroke="currentColor"
                   strokeWidth="8"
                   fill="none"
-                  className="text-bronze-700 dark:text-bronze-600"
+                  className="text-bronze-700/80 dark:text-bronze-600/80"
                 />
                 {/* Pipe joints */}
-                <circle cx="10" cy="40" r="8" className="fill-bronze-800 dark:fill-bronze-700" />
-                <circle cx="190" cy="40" r="8" className="fill-bronze-800 dark:fill-bronze-700" />
+                <circle cx="10" cy="40" r="7" className="fill-bronze-800 dark:fill-bronze-600" />
+                <circle cx="190" cy="40" r="7" className="fill-bronze-800 dark:fill-bronze-600" />
                 {/* Rivets */}
                 {[30, 60, 90, 120, 150, 170].map((x) => (
-                  <circle key={x} cx={x} cy="40" r="3" className="fill-bronze-600 dark:fill-bronze-500" />
+                  <circle key={x} cx={x} cy="40" r="2" className="fill-bronze-600 dark:fill-bronze-300/60" />
                 ))}
               </svg>
 
@@ -452,7 +452,7 @@ export function Footer({ className }: { className?: string }) {
               )}
 
               {/* Footer text positioned under pipe */}
-              <div className="absolute top-full mt-0 left-1/2 -translate-x-1/2 text-center text-sm text-bronze-800/80 dark:text-bronze-400 whitespace-nowrap">
+              <div className="absolute top-full mt-0 left-1/2 -translate-x-1/2 text-center text-sm text-bronze-800/80 dark:text-bronze-600 whitespace-nowrap">
                 <p>{footerText}</p>
               </div>
             </div>
@@ -493,7 +493,7 @@ interface GaugeProps {
 function Gauge({ value, max, unit, label, type, steamIntensity }: GaugeProps) {
   const percentage = (value / max) * 100;
   const angle = (percentage / 100) * 270 - 135; // -135 to 135 degrees
-  const isHigh = percentage > 85;
+  const isHigh = percentage > 60;
 
   // Debug: log the current values
   // console.log(`${type}: value=${value}, percentage=${percentage.toFixed(1)}%, angle=${angle.toFixed(1)}°`);
@@ -520,7 +520,7 @@ function Gauge({ value, max, unit, label, type, steamIntensity }: GaugeProps) {
       )}
 
       <div className={cn(
-        "relative h-32 w-32 rounded-full bg-gradient-to-b from-bronze-800/70 to-amber-400/30",
+        "relative h-32 w-32 rounded-full bg-gradient-to-b from-bronze-800/70 to-amber-900/20",
         "ring-2 ring-inset ring-bronze-800/50 shadow-[inset_0_0_20px_rgba(0,0,0,0.3)]",
         "transition-all duration-300",
         isHigh && "ring-red-600/60 animate-pulse"
@@ -530,8 +530,8 @@ function Gauge({ value, max, unit, label, type, steamIntensity }: GaugeProps) {
             {/* Define gradient for the arc */}
             <linearGradient id={`gauge-gradient-${type}`} x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#92400e" />
-              <stop offset="50%" stopColor="#ea580c" />
-              <stop offset="100%" stopColor="#dc2626" />
+              <stop offset="50%" stopColor="#b2673f" />
+              <stop offset="100%" stopColor="#9a1c1c" />
             </linearGradient>
           </defs>
 
@@ -561,7 +561,7 @@ function Gauge({ value, max, unit, label, type, steamIntensity }: GaugeProps) {
             <path
               d="M 0,-35 A 35,35 0 0,1 24.75,-24.75"
               fill="none"
-              stroke="#ea580c"
+              stroke="#e76722ff"
               strokeWidth="4"
               className="transition-opacity duration-300"
               opacity={percentage >= 16.66 && percentage < 33.33 ? 0.9 : 0.3}
@@ -571,7 +571,7 @@ function Gauge({ value, max, unit, label, type, steamIntensity }: GaugeProps) {
             <path
               d="M 24.75,-24.75 A 35,35 0 0,1 24.75,24.75"
               fill="none"
-              stroke="#dc2626"
+              stroke="#b32f2fff"
               strokeWidth="4"
               className="transition-opacity duration-300"
               opacity={percentage >= 33.33 ? 0.9 : 0.3}
@@ -581,9 +581,9 @@ function Gauge({ value, max, unit, label, type, steamIntensity }: GaugeProps) {
             <circle
               cx={30 * Math.cos((Math.PI / 180) * angle)}
               cy={30 * Math.sin((Math.PI / 180) * angle)}
-              r="2"
-              fill="yellow"
-              opacity="0.8"
+              r="1.5"
+              fill="silver"
+              opacity="0.5"
             />
 
             {/* Needle - moves independently */}

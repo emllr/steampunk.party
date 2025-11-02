@@ -2,7 +2,7 @@ export function ClockworkAutomataPreview() {
   return (
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
-      <rect width="200" height="150" fill="#f7f1e3" />
+      <rect width="200" height="150" fill="#efe0bcff" />
 
       {/* L-system tree structure */}
       <g transform="translate(100, 130)">

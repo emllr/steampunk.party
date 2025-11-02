@@ -2,18 +2,18 @@ export function ChronoPlotPreview() {
   return (
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
-      <rect width="200" height="150" fill="#f7f1e3" />
+      <rect width="200" height="150" fill="#f3e7caff" />
 
       {/* Graph frame */}
-      <rect x="20" y="20" width="160" height="110" fill="none" stroke="#8b6914" strokeWidth="2" />
-      
+      <rect x="20" y="20" width="160" height="110" fill="none" stroke="#8b7e5dff" strokeWidth="2" />
+
       {/* Grid lines */}
       <g opacity="0.3">
         {[40, 60, 80, 100, 120, 140, 160].map((x) => (
-          <line key={`v-${x}`} x1={x} y1="20" x2={x} y2="130" stroke="#8b6914" strokeWidth="0.5" />
+          <line key={`v-${x}`} x1={x} y1="20" x2={x} y2="130" stroke="#464134ff" strokeWidth="0.5" />
         ))}
         {[40, 60, 80, 100, 120].map((y) => (
-          <line key={`h-${y}`} x1="20" y1={y} x2="180" y2={y} stroke="#8b6914" strokeWidth="0.5" />
+          <line key={`h-${y}`} x1="20" y1={y} x2="180" y2={y} stroke="#9f8648ff" strokeWidth="0.5" />
         ))}
       </g>
 
@@ -23,7 +23,7 @@ export function ChronoPlotPreview() {
         <path
           d="M 20 75 Q 50 40, 80 75 T 140 75 T 200 75"
           fill="none"
-          stroke="#4169E1"
+          stroke="#5e7fe459"
           strokeWidth="2"
         >
           <animate
@@ -40,7 +40,7 @@ export function ChronoPlotPreview() {
         <path
           d="M 20 90 L 60 50 L 60 90 L 100 50 L 100 90 L 140 50 L 140 90 L 180 50"
           fill="none"
-          stroke="#FFA500"
+          stroke="#d09d59af"
           strokeWidth="2"
           opacity="0.8"
         >
@@ -57,7 +57,7 @@ export function ChronoPlotPreview() {
         <path
           d="M 20 100 L 25 95 L 30 105 L 35 98 L 40 102 L 45 96 L 50 104 L 55 99 L 60 103 L 65 97 L 70 101 L 75 95 L 80 105"
           fill="none"
-          stroke="#CD5C5C"
+          stroke="#ce6666a8"
           strokeWidth="1.5"
           opacity="0.7"
         >

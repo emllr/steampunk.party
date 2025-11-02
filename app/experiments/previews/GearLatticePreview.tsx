@@ -2,12 +2,12 @@ export function GearLatticePreview() {
   return (
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
-      <rect width="200" height="150" fill="#f7f1e3" />
+      <rect width="200" height="150" fill="#2a2a2f" />
 
       {/* Gear definitions */}
       <defs>
         <g id="gear">
-          <circle cx="0" cy="0" r="18" fill="#b8860b" stroke="#8b6914" strokeWidth="1" />
+          <circle cx="0" cy="0" r="18" fill="#97784aff" stroke="#877342ff" strokeWidth="1" />
           <circle cx="0" cy="0" r="8" fill="#4a4a4a" />
           {/* Teeth */}
           {Array.from({ length: 12 }).map((_, i) => {
@@ -17,13 +17,13 @@ export function GearLatticePreview() {
             const x2 = Math.cos(angle) * 22;
             const y2 = Math.sin(angle) * 22;
             return (
-              <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#8b6914" strokeWidth="3" strokeLinecap="round" />
+              <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#756744ff" strokeWidth="3" strokeLinecap="round" />
             );
           })}
         </g>
 
         <g id="smallGear">
-          <circle cx="0" cy="0" r="12" fill="#8b6914" stroke="#6a4f2a" strokeWidth="1" />
+          <circle cx="0" cy="0" r="12" fill="#8d7842ff" stroke="#6a4f2a" strokeWidth="1" />
           <circle cx="0" cy="0" r="5" fill="#4a4a4a" />
           {/* Teeth */}
           {Array.from({ length: 8 }).map((_, i) => {

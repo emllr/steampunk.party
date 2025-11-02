@@ -7,10 +7,10 @@ export function AetherSynthPreview() {
       {/* Definitions */}
       <defs>
         <radialGradient id="padGlow" cx="50%" cy="50%">
-          <stop offset="0%" stopColor="#ffd700" stopOpacity="0.8" />
-          <stop offset="100%" stopColor="#b8860b" stopOpacity="0.2" />
+          <stop offset="0%" stopColor="#635544ff" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="#c28556ff" stopOpacity="0.2" />
         </radialGradient>
-        
+
         <filter id="synthGlow">
           <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
           <feMerge>
@@ -33,8 +33,8 @@ export function AetherSynthPreview() {
                 y="0"
                 width="40"
                 height="30"
-                fill="#8b6914"
-                stroke="#b8860b"
+                fill="#998c6cff"
+                stroke="#8a794eff"
                 strokeWidth="2"
                 rx="4"
               />
@@ -71,7 +71,7 @@ export function AetherSynthPreview() {
             cx={-50 + i * 20}
             cy="0"
             r="2"
-            fill="#ffd700"
+            fill="#979588ff"
             opacity="0"
           >
             <animate
@@ -96,8 +96,8 @@ export function AetherSynthPreview() {
       <g transform="translate(100, 25)">
         {[-20, 0, 20].map((x, i) => (
           <g key={i} transform={`translate(${x}, 0)`}>
-            <circle cx="0" cy="0" r="8" fill="#4a4a4a" stroke="#8b6914" strokeWidth="1" />
-            <line x1="0" y1="0" x2="0" y2="-5" stroke="#ffd700" strokeWidth="2">
+            <circle cx="0" cy="0" r="8" fill="#4a4a4a" stroke="#84827eff" strokeWidth="1" />
+            <line x1="0" y1="0" x2="0" y2="-5" stroke="#739df185" strokeWidth="2">
               <animateTransform
                 attributeName="transform"
                 type="rotate"
@@ -119,14 +119,16 @@ export function AetherSynthPreview() {
             y="0"
             width="15"
             height="8"
-            fill="#523b20"
-            stroke="#8b6914"
+            fill="#52402bff"
+            stroke="#856b29ff"
             strokeWidth="0.5"
             opacity="0.5"
           >
             <animate
               attributeName="fill"
-              values="#523b20;#ffd700;#523b20"
+              values="#604a31ff;
+              #f3ebbaff;
+              #5a4630ff"
               dur="2s"
               begin={`${i * 0.25}s`}
               repeatCount="indefinite"

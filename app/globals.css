@@ -19,6 +19,68 @@
 
   --parchment: #f7f1e3;
 
+  /* === CENTRALIZED COLOR SYSTEM === */
+  
+  /* Flame/Fire colors */
+  --flame-white: #fff;
+  --flame-yellow: #fbbf24;
+  --flame-orange: #f59e0b;
+  --flame-red: #dc2626;
+  --flame-dark-orange: #ea580c;
+  --flame-ember: #92400e;
+  
+  /* Boiler/Metal colors */
+  --metal-pipe: #6e4f2a;
+  --metal-valve: #8e6535;
+  --metal-rivet: var(--bronze-600);
+  --metal-broken: var(--bronze-700);
+  
+  /* Gauge/Interface colors */
+  --gauge-bg: #f3f4f6;
+  --gauge-border: #6b7280;
+  --gauge-crack: #374151;
+  --gauge-danger: #dc2626;
+  --gauge-normal: var(--bronze-600);
+  
+  /* Experiment/Canvas colors */
+  --canvas-bg: #1a1a1a;
+  --canvas-gold: #ffd700;
+  --canvas-bronze: #b8860b;
+  --canvas-dark-bronze: #8b6914;
+  --canvas-charcoal: #4a4a4a;
+  --canvas-dark-charcoal: #444;
+  --canvas-black: #000;
+  --canvas-gray: #888;
+  --canvas-dark-gray: #666;
+  --canvas-green: #00ff00;
+  
+  /* Three.js/3D colors (hex format for WebGL) */
+  --webgl-space: #000814;
+  --webgl-white: #ffffff;
+  --webgl-ambient: #404040;
+  --webgl-blue: #4444ff;
+  --webgl-royal-blue: #4169E1;
+  --webgl-orange: #FFA500;
+  --webgl-salmon: #CD5C5C;
+  
+  /* Tube/Electronic colors */
+  --tube-orange: #ff6600;
+  --tube-bright-orange: #ff4400;
+  --tube-red: #ff2200;
+  --tube-dark: #111;
+  
+  /* Experiment Preview colors */
+  --preview-bg: var(--parchment);
+  --preview-accent: var(--canvas-dark-bronze);
+  --preview-highlight: var(--canvas-gold);
+  --preview-shadow: var(--canvas-charcoal);
+  
+  /* Special effect colors */
+  --glow-primary: var(--canvas-gold);
+  --glow-secondary: var(--flame-orange);
+  --spark-color: var(--flame-yellow);
+  --steam-color: rgba(255, 255, 255, 0.4);
+
   color-scheme: light;
 
   --radius: 0.625rem;
@@ -86,6 +148,29 @@
   --bronze-800: #d4a574;
   --bronze-900: #e5c19a;
 
+  /* === DARK MODE COLOR OVERRIDES === */
+  
+  /* Flame colors (slightly muted in dark mode) */
+  --flame-white: #f9f9f9;
+  --flame-yellow: #f0d000;
+  --flame-orange: #e08000;
+  
+  /* Gauge colors (adjusted for dark theme) */
+  --gauge-bg: #2a2a2a;
+  --gauge-border: #555;
+  --gauge-crack: #666;
+  
+  /* Canvas colors (enhanced for dark mode) */
+  --canvas-bg: #0a0a0a;
+  --canvas-charcoal: #555;
+  --canvas-dark-charcoal: #333;
+  --canvas-gray: #999;
+  --canvas-dark-gray: #777;
+  
+  /* Preview colors (dark mode optimized) */
+  --preview-bg: var(--parchment);
+  --preview-shadow: #222;
+
   --background: #0f0c0a;
   --foreground: #f5e6d3;
 
@@ -133,6 +218,58 @@
   --color-bronze-900: var(--bronze-900);
 
   --color-parchment: var(--parchment);
+  
+  /* Centralized color utilities */
+  --color-flame-white: var(--flame-white);
+  --color-flame-yellow: var(--flame-yellow);
+  --color-flame-orange: var(--flame-orange);
+  --color-flame-red: var(--flame-red);
+  --color-flame-dark-orange: var(--flame-dark-orange);
+  --color-flame-ember: var(--flame-ember);
+  
+  --color-metal-pipe: var(--metal-pipe);
+  --color-metal-valve: var(--metal-valve);
+  --color-metal-rivet: var(--metal-rivet);
+  --color-metal-broken: var(--metal-broken);
+  
+  --color-gauge-bg: var(--gauge-bg);
+  --color-gauge-border: var(--gauge-border);
+  --color-gauge-crack: var(--gauge-crack);
+  --color-gauge-danger: var(--gauge-danger);
+  --color-gauge-normal: var(--gauge-normal);
+  
+  --color-canvas-bg: var(--canvas-bg);
+  --color-canvas-gold: var(--canvas-gold);
+  --color-canvas-bronze: var(--canvas-bronze);
+  --color-canvas-dark-bronze: var(--canvas-dark-bronze);
+  --color-canvas-charcoal: var(--canvas-charcoal);
+  --color-canvas-dark-charcoal: var(--canvas-dark-charcoal);
+  --color-canvas-black: var(--canvas-black);
+  --color-canvas-gray: var(--canvas-gray);
+  --color-canvas-dark-gray: var(--canvas-dark-gray);
+  --color-canvas-green: var(--canvas-green);
+  
+  --color-webgl-space: var(--webgl-space);
+  --color-webgl-white: var(--webgl-white);
+  --color-webgl-ambient: var(--webgl-ambient);
+  --color-webgl-blue: var(--webgl-blue);
+  --color-webgl-royal-blue: var(--webgl-royal-blue);
+  --color-webgl-orange: var(--webgl-orange);
+  --color-webgl-salmon: var(--webgl-salmon);
+  
+  --color-tube-orange: var(--tube-orange);
+  --color-tube-bright-orange: var(--tube-bright-orange);
+  --color-tube-red: var(--tube-red);
+  --color-tube-dark: var(--tube-dark);
+  
+  --color-preview-bg: var(--preview-bg);
+  --color-preview-accent: var(--preview-accent);
+  --color-preview-highlight: var(--preview-highlight);
+  --color-preview-shadow: var(--preview-shadow);
+  
+  --color-glow-primary: var(--glow-primary);
+  --color-glow-secondary: var(--glow-secondary);
+  --color-spark-color: var(--spark-color);
 
   /* Shadows and radii */
   --radius-lg: 0.75rem;

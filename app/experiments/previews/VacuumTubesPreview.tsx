@@ -7,9 +7,9 @@ export function VacuumTubesPreview() {
       {/* Definitions */}
       <defs>
         <radialGradient id="tubeGlow" cx="50%" cy="50%">
-          <stop offset="0%" stopColor="#ff6600" stopOpacity="0.8" />
-          <stop offset="50%" stopColor="#ff4400" stopOpacity="0.4" />
-          <stop offset="100%" stopColor="#ff2200" stopOpacity="0" />
+          <stop offset="0%" stopColor="#fa8a40ff" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="#ef6a39ff" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#8d392cff" stopOpacity="0" />
         </radialGradient>
 
         <filter id="glowFilter">
@@ -38,15 +38,15 @@ export function VacuumTubesPreview() {
         </ellipse>
 
         {/* Internal elements */}
-        <line x1="0" y1="-30" x2="0" y2="30" stroke="#ff6600" strokeWidth="1" opacity="0.8" />
-        <circle cx="0" cy="-15" r="3" fill="#888" />
-        <circle cx="0" cy="0" r="4" fill="#888" />
-        <circle cx="0" cy="15" r="3" fill="#888" />
+        <line x1="0" y1="-30" x2="0" y2="30" stroke="#e77a32ff" strokeWidth="1" opacity="0.8" />
+        <circle cx="0" cy="-15" r="2.5" fill="#888" />
+        <circle cx="0" cy="0" r="3.5" fill="#888" />
+        <circle cx="0" cy="15" r="2.5" fill="#888" />
 
         {/* Base pins */}
-        <rect x="-2" y="35" width="4" height="10" fill="#666" />
-        <rect x="-10" y="35" width="4" height="10" fill="#666" />
-        <rect x="6" y="35" width="4" height="10" fill="#666" />
+        <rect x="-2" y="35" width="3" height="10" fill="#666" />
+        <rect x="-10" y="35" width="3" height="10" fill="#666" />
+        <rect x="6" y="35" width="3" height="10" fill="#666" />
       </g>
 
       {/* Tube 2 */}
@@ -68,14 +68,14 @@ export function VacuumTubesPreview() {
 
         {/* Internal elements */}
         <line x1="0" y1="-30" x2="0" y2="30" stroke="#ff6600" strokeWidth="1" opacity="0.8" />
-        <circle cx="0" cy="-15" r="3" fill="#888" />
-        <circle cx="0" cy="0" r="4" fill="#888" />
-        <circle cx="0" cy="15" r="3" fill="#888" />
+        <circle cx="0" cy="-15" r="2.5" fill="#888" />
+        <circle cx="0" cy="0" r="3.5" fill="#888" />
+        <circle cx="0" cy="15" r="2.5" fill="#888" />
 
         {/* Base pins */}
-        <rect x="-2" y="35" width="4" height="10" fill="#666" />
-        <rect x="-10" y="35" width="4" height="10" fill="#666" />
-        <rect x="6" y="35" width="4" height="10" fill="#666" />
+        <rect x="-2" y="35" width="3" height="10" fill="#666" />
+        <rect x="-10" y="35" width="3" height="10" fill="#666" />
+        <rect x="6" y="35" width="3" height="10" fill="#666" />
       </g>
 
       {/* Oscilloscope trace */}
@@ -84,9 +84,9 @@ export function VacuumTubesPreview() {
         <path
           d="M -40 0 Q -20 -8, 0 0 T 40 0"
           fill="none"
-          stroke="#00ff00"
-          strokeWidth="1.5"
-          opacity="0.8"
+          stroke="#4faf4fff"
+          strokeWidth="1.4"
+          opacity="0.6"
         >
           <animate
             attributeName="d"

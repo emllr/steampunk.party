@@ -2,7 +2,7 @@ export function SmokeSimPreview() {
   return (
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
-      <rect width="200" height="150" fill="#1a1a1a" />
+      <rect width="200" height="150" fill="#202020ff" />
 
       {/* Definitions */}
       <defs>
@@ -11,9 +11,9 @@ export function SmokeSimPreview() {
         </filter>
 
         <radialGradient id="smokeGradient" cx="50%" cy="50%">
-          <stop offset="0%" stopColor="#b8860b" stopOpacity="0.6" />
-          <stop offset="50%" stopColor="#8b6914" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#523b20" stopOpacity="0" />
+          <stop offset="0%" stopColor="#cbc5b5ff" stopOpacity="0.6" />
+          <stop offset="50%" stopColor="#8a7e61ff" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#755b3eff" stopOpacity="0" />
         </radialGradient>
       </defs>
 
@@ -93,8 +93,8 @@ export function SmokeSimPreview() {
       </g>
 
       {/* Emitter base */}
-      <rect x="85" y="140" width="30" height="10" fill="#8b6914" rx="2" />
-      <circle cx="100" cy="145" r="3" fill="#ffd700">
+      <rect x="85" y="140" width="30" height="10" fill="#383841ff" rx="2" />
+      <circle cx="100" cy="145" r="3" fill="#dac862ff">
         <animate
           attributeName="opacity"
           values="0.5;1;0.5"

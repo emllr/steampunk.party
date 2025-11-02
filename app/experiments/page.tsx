@@ -73,14 +73,14 @@ export default function ExperimentsPage() {
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute inset-0 rounded-xl ring-1 ring-bronze-700/30" />
               {["left-2 top-2","right-2 top-2","left-2 bottom-2","right-2 bottom-2"].map((pos, i) => (
-                <span key={i} className={`absolute ${pos} size-2 rounded-full bg-gradient-to-b from-amber-300 to-amber-600 ring-1 ring-inset ring-bronze-800/50 shadow-[0_1px_1px_rgba(0,0,0,0.25)]`} />
+                <span key={i} className={`absolute ${pos} size-2 rounded-full bg-gradient-to-b from-amber-100 to-amber-800 ring-1 ring-inset ring-bronze-800/50 shadow-[0_1px_1px_rgba(0,0,0,0.25)]`} />
               ))}
             </div>
             <CardHeader>
               <CardTitle>{exp.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="h-32 rounded bg-gradient-to-br from-amber-200/50 to-amber-300/30 ring-1 ring-inset ring-bronze-700/30 overflow-hidden">
+              <div className="h-32 rounded bg-gradient-to-br from-amber-100/40 to-amber-100/10 ring-1 ring-inset ring-bronze-700/30 overflow-hidden">
                 <exp.Preview />
               </div>
               <div className="mt-3 text-sm text-bronze-800/90 dark:text-bronze-200">{exp.blurb}</div>
