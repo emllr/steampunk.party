@@ -3,7 +3,7 @@ export function ClockworkAutomataPreview() {
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
       <rect width="200" height="150" fill="#f7f1e3" />
-      
+
       {/* L-system tree structure */}
       <g transform="translate(100, 130)">
         {/* Main branch */}
@@ -15,7 +15,7 @@ export function ClockworkAutomataPreview() {
             repeatCount="indefinite"
           />
         </line>
-        
+
         {/* Left branches */}
         <g>
           <line x1="0" y1="-40" x2="-20" y2="-60" stroke="#8b6914" strokeWidth="2" opacity="0">
@@ -49,7 +49,7 @@ export function ClockworkAutomataPreview() {
             />
           </line>
         </g>
-        
+
         {/* Right branches */}
         <g>
           <line x1="0" y1="-40" x2="20" y2="-60" stroke="#8b6914" strokeWidth="2" opacity="0">
@@ -83,7 +83,7 @@ export function ClockworkAutomataPreview() {
             />
           </line>
         </g>
-        
+
         {/* Gears at branch points */}
         <g opacity="0">
           <circle cx="0" cy="-40" r="5" fill="none" stroke="#b8860b" strokeWidth="1" />
@@ -105,7 +105,7 @@ export function ClockworkAutomataPreview() {
             repeatCount="indefinite"
           />
         </g>
-        
+
         <g opacity="0">
           <circle cx="-20" cy="-60" r="4" fill="none" stroke="#b8860b" strokeWidth="1" />
           <circle cx="-20" cy="-60" r="1.5" fill="#4a4a4a" />
@@ -126,7 +126,7 @@ export function ClockworkAutomataPreview() {
             repeatCount="indefinite"
           />
         </g>
-        
+
         <g opacity="0">
           <circle cx="20" cy="-60" r="4" fill="none" stroke="#b8860b" strokeWidth="1" />
           <circle cx="20" cy="-60" r="1.5" fill="#4a4a4a" />
@@ -148,7 +148,7 @@ export function ClockworkAutomataPreview() {
           />
         </g>
       </g>
-      
+
       {/* Control text */}
       <text x="100" y="20" textAnchor="middle" fill="#8b6914" fontSize="10" fontFamily="monospace">
         F → F[+F][-F]

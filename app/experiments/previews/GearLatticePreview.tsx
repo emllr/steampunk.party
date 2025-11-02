@@ -3,7 +3,7 @@ export function GearLatticePreview() {
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
       <rect width="200" height="150" fill="#f7f1e3" />
-      
+
       {/* Gear definitions */}
       <defs>
         <g id="gear">
@@ -21,7 +21,7 @@ export function GearLatticePreview() {
             );
           })}
         </g>
-        
+
         <g id="smallGear">
           <circle cx="0" cy="0" r="12" fill="#8b6914" stroke="#6a4f2a" strokeWidth="1" />
           <circle cx="0" cy="0" r="5" fill="#4a4a4a" />
@@ -38,7 +38,7 @@ export function GearLatticePreview() {
           })}
         </g>
       </defs>
-      
+
       {/* Large central gear */}
       <g transform="translate(100, 75)">
         <use href="#gear">
@@ -51,7 +51,7 @@ export function GearLatticePreview() {
           />
         </use>
       </g>
-      
+
       {/* Surrounding gears */}
       <g transform="translate(60, 45)">
         <use href="#smallGear">
@@ -64,7 +64,7 @@ export function GearLatticePreview() {
           />
         </use>
       </g>
-      
+
       <g transform="translate(140, 45)">
         <use href="#smallGear">
           <animateTransform
@@ -76,7 +76,7 @@ export function GearLatticePreview() {
           />
         </use>
       </g>
-      
+
       <g transform="translate(60, 105)">
         <use href="#smallGear">
           <animateTransform
@@ -88,7 +88,7 @@ export function GearLatticePreview() {
           />
         </use>
       </g>
-      
+
       <g transform="translate(140, 105)">
         <use href="#smallGear">
           <animateTransform
@@ -100,7 +100,7 @@ export function GearLatticePreview() {
           />
         </use>
       </g>
-      
+
       {/* Connection lines */}
       <g opacity="0.3">
         <line x1="100" y1="75" x2="60" y2="45" stroke="#8b6914" strokeWidth="1" />

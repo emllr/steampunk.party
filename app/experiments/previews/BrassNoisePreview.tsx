@@ -3,14 +3,14 @@ export function BrassNoisePreview() {
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
       <rect width="200" height="150" fill="url(#brassGradient)" />
-      
+
       {/* Definitions */}
       <defs>
         <linearGradient id="brassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#b8860b" stopOpacity="0.1" />
           <stop offset="100%" stopColor="#8b6914" stopOpacity="0.2" />
         </linearGradient>
-        
+
         <filter id="glow">
           <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
           <feMerge>
@@ -19,7 +19,7 @@ export function BrassNoisePreview() {
           </feMerge>
         </filter>
       </defs>
-      
+
       {/* Resonator tubes */}
       <g transform="translate(100, 75)">
         {[0, 1, 2, 3, 4].map((i) => (
@@ -37,8 +37,8 @@ export function BrassNoisePreview() {
             />
             {/* Resonance wave */}
             <path
-              d={`M ${-56 + i * 30} ${20 - i * 4} 
-                   Q ${-56 + i * 30} ${10 - i * 4} ${-56 + i * 30} ${0 - i * 4} 
+              d={`M ${-56 + i * 30} ${20 - i * 4}
+                   Q ${-56 + i * 30} ${10 - i * 4} ${-56 + i * 30} ${0 - i * 4}
                    T ${-56 + i * 30} ${-20 + i * 4}`}
               stroke="#ffd700"
               strokeWidth="2"
@@ -55,7 +55,7 @@ export function BrassNoisePreview() {
             </path>
           </g>
         ))}
-        
+
         {/* Sound waves */}
         {[0, 1, 2].map((i) => (
           <circle
@@ -84,7 +84,7 @@ export function BrassNoisePreview() {
             />
           </circle>
         ))}
-        
+
         {/* Control knobs */}
         <g transform="translate(0, 50)">
           {[-30, 0, 30].map((x, i) => (

@@ -3,7 +3,7 @@ export function OrreryConstructorPreview() {
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
       <rect width="200" height="150" fill="#000814" />
-      
+
       {/* Stars */}
       {Array.from({ length: 30 }).map((_, i) => (
         <circle
@@ -15,10 +15,10 @@ export function OrreryConstructorPreview() {
           opacity={0.3 + Math.random() * 0.7}
         />
       ))}
-      
+
       {/* Base platform */}
       <ellipse cx="100" cy="120" rx="60" ry="15" fill="#1a1a1a" stroke="#b8860b" strokeWidth="1" />
-      
+
       {/* Central sun gear */}
       <g transform="translate(100, 75)">
         <circle cx="0" cy="0" r="20" fill="#b8860b" stroke="#8b6914" strokeWidth="1" />
@@ -33,7 +33,7 @@ export function OrreryConstructorPreview() {
           repeatCount="indefinite"
         />
       </g>
-      
+
       {/* Earth system */}
       <g transform="translate(100, 75)">
         <g>
@@ -52,7 +52,7 @@ export function OrreryConstructorPreview() {
           <circle cx="35" cy="0" r="4" fill="#4169E1" />
         </g>
       </g>
-      
+
       {/* Mars system */}
       <g transform="translate(100, 75)">
         <g>
@@ -71,7 +71,7 @@ export function OrreryConstructorPreview() {
           <circle cx="50" cy="0" r="3" fill="#CD5C5C" />
         </g>
       </g>
-      
+
       {/* Venus system */}
       <g transform="translate(100, 75)">
         <g>
@@ -90,7 +90,7 @@ export function OrreryConstructorPreview() {
           <circle cx="-25" cy="0" r="3.5" fill="#FFA500" />
         </g>
       </g>
-      
+
       {/* Decorative studs */}
       <g transform="translate(100, 120)">
         {Array.from({ length: 8 }).map((_, i) => {
@@ -102,7 +102,7 @@ export function OrreryConstructorPreview() {
           );
         })}
       </g>
-      
+
       <defs>
         <filter id="sunGlow">
           <feGaussianBlur stdDeviation="2" result="coloredBlur"/>

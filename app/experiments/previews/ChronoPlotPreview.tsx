@@ -3,7 +3,7 @@ export function ChronoPlotPreview() {
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
       <rect width="200" height="150" fill="#f7f1e3" />
-      
+
       {/* Graph frame */}
       <rect x="20" y="20" width="160" height="110" fill="none" stroke="#8b6914" strokeWidth="2" />
       
@@ -16,7 +16,7 @@ export function ChronoPlotPreview() {
           <line key={`h-${y}`} x1="20" y1={y} x2="180" y2={y} stroke="#8b6914" strokeWidth="0.5" />
         ))}
       </g>
-      
+
       {/* Animated data lines */}
       <g>
         {/* Sine wave */}
@@ -35,7 +35,7 @@ export function ChronoPlotPreview() {
             repeatCount="indefinite"
           />
         </path>
-        
+
         {/* Sawtooth wave */}
         <path
           d="M 20 90 L 60 50 L 60 90 L 100 50 L 100 90 L 140 50 L 140 90 L 180 50"
@@ -52,7 +52,7 @@ export function ChronoPlotPreview() {
             repeatCount="indefinite"
           />
         </path>
-        
+
         {/* Noise */}
         <path
           d="M 20 100 L 25 95 L 30 105 L 35 98 L 40 102 L 45 96 L 50 104 L 55 99 L 60 103 L 65 97 L 70 101 L 75 95 L 80 105"
@@ -77,7 +77,7 @@ export function ChronoPlotPreview() {
           />
         </path>
       </g>
-      
+
       {/* Crosshair */}
       <g opacity="0">
         <line x1="100" y1="20" x2="100" y2="130" stroke="#8b6914" strokeWidth="1" strokeDasharray="2,2" />
@@ -90,7 +90,7 @@ export function ChronoPlotPreview() {
           repeatCount="indefinite"
         />
       </g>
-      
+
       {/* Corner rivets */}
       <circle cx="20" cy="20" r="3" fill="#b8860b" />
       <circle cx="180" cy="20" r="3" fill="#b8860b" />

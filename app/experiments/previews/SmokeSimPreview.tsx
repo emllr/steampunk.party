@@ -3,20 +3,20 @@ export function SmokeSimPreview() {
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
       <rect width="200" height="150" fill="#1a1a1a" />
-      
+
       {/* Definitions */}
       <defs>
         <filter id="smokeBlur">
           <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
         </filter>
-        
+
         <radialGradient id="smokeGradient" cx="50%" cy="50%">
           <stop offset="0%" stopColor="#b8860b" stopOpacity="0.6" />
           <stop offset="50%" stopColor="#8b6914" stopOpacity="0.3" />
           <stop offset="100%" stopColor="#523b20" stopOpacity="0" />
         </radialGradient>
       </defs>
-      
+
       {/* Smoke particles */}
       <g filter="url(#smokeBlur)">
         {[0, 1, 2, 3, 4].map((i) => (
@@ -58,7 +58,7 @@ export function SmokeSimPreview() {
                 additive="sum"
               />
             </circle>
-            
+
             {/* Secondary smoke */}
             <circle
               cx={80 + i * 10}
@@ -91,7 +91,7 @@ export function SmokeSimPreview() {
           </g>
         ))}
       </g>
-      
+
       {/* Emitter base */}
       <rect x="85" y="140" width="30" height="10" fill="#8b6914" rx="2" />
       <circle cx="100" cy="145" r="3" fill="#ffd700">

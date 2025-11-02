@@ -3,7 +3,7 @@ export function AetherSynthPreview() {
     <svg viewBox="0 0 200 150" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
       {/* Background */}
       <rect width="200" height="150" fill="#1a1a1a" />
-      
+
       {/* Definitions */}
       <defs>
         <radialGradient id="padGlow" cx="50%" cy="50%">
@@ -19,7 +19,7 @@ export function AetherSynthPreview() {
           </feMerge>
         </filter>
       </defs>
-      
+
       {/* Pad grid */}
       <g transform="translate(50, 40)">
         {[0, 1, 2, 3].map((i) => {
@@ -59,11 +59,11 @@ export function AetherSynthPreview() {
           );
         })}
       </g>
-      
+
       {/* Waveform display */}
       <g transform="translate(100, 120)">
         <rect x="-60" y="-15" width="120" height="30" fill="none" stroke="#444" strokeWidth="1" rx="2" />
-        
+
         {/* Granular particles */}
         {[0, 1, 2, 3, 4, 5].map((i) => (
           <circle
@@ -91,7 +91,7 @@ export function AetherSynthPreview() {
           </circle>
         ))}
       </g>
-      
+
       {/* Control knobs */}
       <g transform="translate(100, 25)">
         {[-20, 0, 20].map((x, i) => (
@@ -109,7 +109,7 @@ export function AetherSynthPreview() {
           </g>
         ))}
       </g>
-      
+
       {/* Sequencer steps */}
       <g transform="translate(30, 140)">
         {Array.from({ length: 8 }).map((_, i) => (
