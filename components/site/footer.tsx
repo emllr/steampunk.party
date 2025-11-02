@@ -141,17 +141,17 @@ export function Footer({ className }: { className?: string }) {
     }
   };
 
-  const handleGaugeClick = (gaugeRef: React.MutableRefObject<boolean>) => {
+  const handleGaugeClick = () => {
     if (!audioEnabled) {
       enableAudio();
     }
   };
 
-  const triggerExplosion = () => {
-    // This function is now mainly for manual explosion triggers
-    // Audio timing is handled in the main effect loop
-    setExploded(true);
-  };
+  // const triggerExplosion = () => {
+  //   // This function is now mainly for manual explosion triggers
+  //   // Audio timing is handled in the main effect loop
+  //   setExploded(true);
+  // };
 
   if (exploded) {
     return (
@@ -399,7 +399,7 @@ export function Footer({ className }: { className?: string }) {
               className="relative cursor-pointer select-none"
               onMouseEnter={() => handleGaugeHover(pressureHoverRef, true)}
               onMouseLeave={() => handleGaugeHover(pressureHoverRef, false)}
-              onClick={() => handleGaugeClick(pressureHoverRef)}
+              onClick={() => handleGaugeClick()}
               title={!audioEnabled ? "Click to enable sound" : ""}
             >
               <Gauge
@@ -462,7 +462,7 @@ export function Footer({ className }: { className?: string }) {
               className="relative cursor-pointer select-none"
               onMouseEnter={() => handleGaugeHover(heatHoverRef, true)}
               onMouseLeave={() => handleGaugeHover(heatHoverRef, false)}
-              onClick={() => handleGaugeClick(heatHoverRef)}
+              onClick={() => handleGaugeClick()}
               title={!audioEnabled ? "Click to enable sound" : ""}
             >
               <Gauge
