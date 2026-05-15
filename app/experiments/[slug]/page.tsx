@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { PanelHost } from "./PanelHost";
 
 type Experiment = {
   slug: string;
@@ -95,34 +95,14 @@ export async function generateStaticParams() {
 
 export const dynamicParams = true;
 
-// Dynamic panel loader
-function getPanelComponent(slug: string, panelName?: string) {
-  if (!panelName) return null;
-
-  // Create a dynamic import for the panel
-  return dynamic(
-    () => import(`./panels/${panelName}`).then(mod => {
-      // Try to get the named export, fallback to default
-      return { default: mod[panelName] || mod.default };
-    }),
-    {
-      ssr: false,
-      loading: () => (
-        <div className="mt-6 rounded-lg border border-[var(--border)] bg-[var(--card)] p-4">
-          <div className="h-48 rounded bg-gradient-to-br from-amber-100/40 to-amber-100/10 ring-1 ring-inset ring-bronze-700/30 animate-pulse" />
-          <p className="mt-3 text-sm text-[var(--muted-foreground)]">Loading experiment...</p>
-        </div>
-      )
-    }
-  );
-}
-
-export default function ExperimentPage({ params }: { params: { slug: string } }) {
-  const exp = experiments[params.slug];
+export default async function ExperimentPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const exp = experiments[slug];
   if (!exp) return notFound();
-
-  // Dynamically get the panel component
-  const PanelComponent = exp.panelName ? getPanelComponent(exp.slug, exp.panelName) : null;
 
   return (
     <section className="relative">
@@ -134,8 +114,8 @@ export default function ExperimentPage({ params }: { params: { slug: string } })
           </div>
           <p className="mt-2 text-[var(--muted-foreground)]">{exp.blurb}</p>
 
-          {PanelComponent ? (
-            <PanelComponent />
+          {exp.panelName ? (
+            <PanelHost panelName={exp.panelName} />
           ) : (
             <div className="mt-6 rounded-lg border border-[var(--border)] bg-[var(--card)] p-4">
               <div className="h-48 rounded bg-gradient-to-br from-amber-100/40 to-amber-100/10 ring-1 ring-inset ring-bronze-700/30" />
